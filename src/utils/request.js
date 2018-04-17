@@ -1,7 +1,13 @@
-import wx from 'wx'
 import Fly from 'flyio'
 
 const request = new Fly()
+
+const errorPrompt = (err) => {
+  wx.showToast({
+    title: err.message,
+    icon: 'none'
+  })
+}
 
 request.interceptors.request.use((request) => {
   wx.showNavigationBarLoading()
@@ -10,13 +16,13 @@ request.interceptors.request.use((request) => {
 
 request.interceptors.response.use((response, promise) => {
   wx.hideNavigationBarLoading()
+  if (!(response && response.data && response.data.res === 0)) {
+    errorPrompt(response)
+  }
   return promise.resolve(response.data)
 }, (err, promise) => {
   wx.hideNavigationBarLoading()
-  wx.showToast({
-    title: err.message,
-    icon: 'none'
-  })
+  errorPrompt(err)
   return promise.reject(err)
 })
 

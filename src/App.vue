@@ -13,19 +13,22 @@ export default {
 
 <style>
 .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 100rpx;
-  box-sizing: border-box;
+  font-size: 26rpx;
+  text-align: center;
 }
-/* this rule will be remove */
+
 * {
   transition: width 2s;
   -moz-transition: width 2s;
   -webkit-transition: width 2s;
   -o-transition: width 2s;
+}
+
+/* font color */
+* {
+  color: #353535;
+}
+.gray {
+  color: #808080;
 }
 </style>
