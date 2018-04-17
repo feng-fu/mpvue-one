@@ -1,62 +1,51 @@
 <template>
   <div class="container">
-    <top-date :weather="weather"></top-date>
-    <one-word :word="word"></one-word>
-    <vol-list :vol="vol" :list="volList"></vol-list>
+    <navigator
+      v-for="v in movies"
+      :key="v.id"
+      :url="'./detail/main?id=' + v.id"
+       class="item"
+    >
+      <movie-detail :movie="v"></movie-detail>
+    </navigator>
   </div>
 </template>
 
 <script>
-import API from '@/utils/api'
-import TopDate from './date'
-import OneWord from './word'
-import VolList from './volList'
+import { mapState, mapActions } from 'vuex'
+import movieDetail from '@/components/movieItem'
 export default {
-  data () {
-    return {
-      weather: {
-        city_name: '地球',
-        climate: '对流层',
-        date: '2018-04-16',
-        humidity: '',
-        hurricane: '',
-        temperature: '',
-        wind_direction: ''
-      },
-      word: {},
-      vol: '',
-      volList: []
-    }
+  mounted () {
+    this.initPage()
   },
   components: {
-    TopDate,
-    OneWord,
-    VolList
+    movieDetail
   },
-  mounted () {
-    this.getNewIds()
+  computed: {
+    ...mapState('movie', ['movies'])
   },
   methods: {
-    async getNewIds () {
-      const data = await API.getNewIds()
-      if (data && data.res === 0) {
-        this.getOneList(data.data[0])
-      }
-    },
-    async getOneList (id) {
-      const data = await API.getOneList(id)
-      console.log(data)
-      if (data && data.res === 0) {
-        this.weather = data.data.weather
-        this.word = data.data.content_list[0]
-        this.vol = data.data.menu.vol
-        this.volList = data.data.menu.list
-      }
+    ...mapActions('movie', ['getMovieList']),
+    async initPage() {
+      await this.getMovieList()
     }
   }
 }
 </script>
 
 <style scoped>
+  navigator {
+    width: 100%;
+  }
+  .item {
+    width: 100%;
+    height: 170rpx;
+  }
 
+  .item:nth-child(odd) {
+    background-color: #e5e4df;
+  }
+  .item:nth-child(even) {
+    background-color: #eae9e4;
+  }
 </style>

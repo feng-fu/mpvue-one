@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import home from './modules/home'
-// import movie from './modules/movie'
+import movie from './modules/movie'
 // import read from './modules/read'
 // import music from './modules/music'
 
@@ -13,6 +13,10 @@ const store = new Vuex.Store({
     home: {
       namespaced: true,
       ...home
+    },
+    movie: {
+      namespaced: true,
+      ...movie
     }
   }
   // movie,
