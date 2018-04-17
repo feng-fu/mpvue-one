@@ -29,7 +29,6 @@ export default {
       if (data && data.res === 0) {
         this.data = data.data
       }
-      console.log(data)
     }
   }
 }

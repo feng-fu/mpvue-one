@@ -11,11 +11,11 @@ export default {
   // 这个字段走 app.json
   config: {
     // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
-    pages: ['^pages/one/main'],
+    pages: ['^pages/home/main'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fafafa',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '一个',
       navigationBarTextStyle: 'black'
     },
     tabBar: {
@@ -23,22 +23,28 @@ export default {
       selectedColor: '#0f0f0f',
       list: [
         {
-          pagePath: 'pages/one/main',
+          pagePath: 'pages/home/main',
           text: 'ONE',
-          iconPath: 'static/icon/o.png',
-          selectedIconPath: 'static/icon/o-active.png'
+          iconPath: 'static/icon/home.png',
+          selectedIconPath: 'static/icon/home-active.png'
         },
         {
-          pagePath: 'pages/all/main',
-          text: 'ALL',
-          iconPath: 'static/icon/a.png',
-          selectedIconPath: 'static/icon/a-active.png'
+          pagePath: 'pages/read/main',
+          text: 'READ',
+          iconPath: 'static/icon/read.png',
+          selectedIconPath: 'static/icon/read-active.png'
         },
         {
-          pagePath: 'pages/me/main',
-          text: 'ME',
-          iconPath: 'static/icon/me.png',
-          selectedIconPath: 'static/icon/me-active.png'
+          pagePath: 'pages/movie/main',
+          text: 'MOVIE',
+          iconPath: 'static/icon/movie.png',
+          selectedIconPath: 'static/icon/movie-active.png'
+        },
+        {
+          pagePath: 'pages/music/main',
+          text: 'MUSIC',
+          iconPath: 'static/icon/music.png',
+          selectedIconPath: 'static/icon/music-active.png'
         }
       ]
     }
