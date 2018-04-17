@@ -1,0 +1,32 @@
+<template>
+  <block>
+    <v-article :title="currentMovie.title" :user_name="currentMovie.user ? currentMovie.user.user_name : ''" :content="currentMovie.content"></v-article>
+  </block>
+</template>
+
+<script>
+import { mapState, mapActions } from 'vuex'
+import article from '@/components/article'
+export default {
+  onLoad(query) {
+    const { id } = query
+    this.initPage(id)
+  },
+  components: {
+    'v-article': article
+  },
+  computed: {
+    ...mapState('movie', ['currentMovie'])
+  },
+  methods: {
+    ...mapActions('movie', ['getMovieDetail']),
+    async initPage(id) {
+      await this.getMovieDetail(id)
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
