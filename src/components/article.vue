@@ -31,10 +31,12 @@ export default {
     line-height: 60rpx;
     font-weight: 550;
     margin: 0 1em 1em;
+    text-align: center;
   }
   .author {
-    text-indent: 1em;
     color: #333;
     font-weight: 100;
+    text-align: right;
+    padding-right: 2em;
   }
 </style>

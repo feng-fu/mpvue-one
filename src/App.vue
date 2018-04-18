@@ -17,6 +17,11 @@ export default {
   text-align: center;
 }
 
+.wrapper {
+  font-size: 26rpx;
+  text-align: left;
+}
+
 * {
   transition: width 2s;
   -moz-transition: width 2s;
@@ -30,5 +35,16 @@ export default {
 }
 .gray {
   color: #808080;
+}
+
+.wxParse {
+  text-indent: 2em;
+}
+.wxParse image {
+  text-indent: 0;
+}
+.wxParse ._view {
+  padding: 0 10rpx;
+  text-indent: 0;
 }
 </style>

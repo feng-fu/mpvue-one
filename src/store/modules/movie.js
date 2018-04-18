@@ -3,9 +3,7 @@ import API from '@/utils/api'
 
 const state = {
   movies: [],
-  currentMovie: {
-    content: ''
-  }
+  currentMovie: {}
 }
 
 const mutations = {
@@ -29,6 +27,9 @@ const actions = {
   async getMovieArticleDetail({ commit, state }, id) {
     const { data: { data } } = await API.getMovieArticleDetail(id)
     commit(CHANGE_CURRENT_MOVIE, { data: data[0] })
+  },
+  clearMovieDetail({ commit }) {
+    commit(CHANGE_CURRENT_MOVIE, { data: {} })
   }
 }
 

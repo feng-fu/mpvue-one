@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './index'
+import App from './question'
 import store from '@/store/index'
 const app = new Vue({
   store,
