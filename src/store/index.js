@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 import home from './modules/home'
 import movie from './modules/movie'
-// import read from './modules/read'
+import read from './modules/read'
 // import music from './modules/music'
 
 Vue.use(Vuex)
@@ -17,11 +17,12 @@ const store = new Vuex.Store({
     movie: {
       namespaced: true,
       ...movie
+    },
+    read: {
+      namespaced: true,
+      ...read
     }
   }
-  // movie,
-  // read,
-  // music
 })
 
 export default store
