@@ -1,6 +1,9 @@
 # one
 
-> A Mpvue project
+> 使用mpvue构建的一个·ONE app小程序版本
+> 使用flyio作为请求库
+> 所有数据均采用vuex进行统一管理
+> 接口从网络获取，简单进行了一次[转发](https://github.com/feng-fu/crawler)
 
 ## Build Setup
 

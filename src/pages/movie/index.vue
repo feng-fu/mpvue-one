@@ -3,7 +3,7 @@
     <navigator
       v-for="v in movies"
       :key="v.id"
-      :url="'./detail/main?id=' + v.id"
+      :url="'/pages/movie/detail/main?id=' + v.id"
        class="item"
     >
       <movie-detail :movie="v"></movie-detail>
