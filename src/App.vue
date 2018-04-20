@@ -1,12 +1,34 @@
 <script>
+import { mapActions, mapMutations } from 'vuex'
 export default {
   created () {
-    // 调用API从本地缓存中获取数据
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    console.log('app created and cache logs by setStorageSync')
+    this.initPage()
+  },
+  methods: {
+    ...mapMutations('weather', {
+      setLocation: 'SET_LOCATION'
+    }),
+    ...mapActions('weather', ['getWeather']),
+    async initPage() {
+      const location = await this.getLocation()
+      this.setLocation({
+        location
+      })
+      this.getWeather()
+    },
+    async getLocation() {
+      return await new Promise((resolve, reject) => {
+        wx.getLocation({
+          success(location) {
+            resolve(location)
+          },
+          fail(err) {
+            console.log(err)
+            reject(err)
+          }
+        })
+      })
+    }
   }
 }
 </script>

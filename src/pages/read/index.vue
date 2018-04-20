@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <view class="mode-title">
+    <view class="mode-title" v-if="readList.essay && readList.essay.length">
       <view class="mode-title-word">
         <text>阅读</text>
       </view>
@@ -8,7 +8,7 @@
     <navigator v-for="v in readList.essay" :key="v.content_id" :url="'./essay/main?id=' + v.content_id">
       <read-list :item="v"></read-list>
     </navigator>
-    <view class="mode-title">
+    <view class="mode-title" v-if="readList.question && readList.question.length">
       <view class="mode-title-word">
         <text>问答</text>
       </view>

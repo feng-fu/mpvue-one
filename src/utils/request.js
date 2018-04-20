@@ -4,7 +4,7 @@ const request = new Fly()
 
 const errorPrompt = (err) => {
   wx.showToast({
-    title: err.message,
+    title: err.message || 'fetch data error.',
     icon: 'none'
   })
 }
