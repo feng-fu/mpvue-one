@@ -13,7 +13,7 @@ import { mapState, mapActions } from 'vuex'
 import article from '@/components/article'
 export default {
   onLoad(query) {
-    console.log(this.currentMovie)
+    this.clearMovieDetail()
     const { id } = query
     this.initPage(id)
   },
@@ -28,10 +28,6 @@ export default {
     async initPage(id) {
       await this.getMovieDetail(id)
     }
-  },
-  beforeDestory() {
-    console.log('before leave triggered.')
-    this.clearMovieDetail()
   }
 }
 </script>

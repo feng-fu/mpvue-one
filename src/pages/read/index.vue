@@ -5,7 +5,7 @@
         <text>阅读</text>
       </view>
     </view>
-    <navigator v-for="v in readList.essay" :key="v.content_id" :url="'./essay/main?id=' + v.content_id">
+    <navigator v-for="v in readList.essay" :key="v.content_id" :url="'/pages/read/essay/main?id=' + v.content_id">
       <read-list :item="v"></read-list>
     </navigator>
     <view class="mode-title" v-if="readList.question && readList.question.length">
@@ -13,7 +13,7 @@
         <text>问答</text>
       </view>
     </view>
-    <navigator v-for="v in readList.question" :key="v.question_id" :url="'./question/main?id=' + v.question_id">
+    <navigator v-for="v in readList.question" :key="v.question_id" :url="'/pages/read/question/main?id=' + v.question_id">
       <question-list :item="v"></question-list>
     </navigator>
   </div>

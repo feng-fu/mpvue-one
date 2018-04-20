@@ -30,6 +30,9 @@ const actions = {
   async getReadContent({ commit, state }, { type, id }) {
     const { data } = await API.getReadDetail(type, id)
     commit(CHANGE_CURRENT_READ, { type, data })
+  },
+  async clearReadContent({ commit, state }, { type }) {
+    commit(CHANGE_CURRENT_READ, { type, data: {} })
   }
   // async getReadComment({ commit, state }, id) {
   //   // const { data } = await API.getReadComment(id)

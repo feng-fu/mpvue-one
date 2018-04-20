@@ -10,7 +10,7 @@
       <view class="asker" v-else>
         <text>网友问：</text>
       </view>
-      <wx-parse :content="detail.question_content"></wx-parse>
+      <wx-parse :content="detail.question_content || ''"></wx-parse>
     </view>
     <view class="divider"></view>
     <view class="answer">
@@ -20,7 +20,7 @@
       <view class="answerer" v-else>
         <text>网友答：</text>
       </view>
-      <wx-parse :content="detail.answer_content"></wx-parse>
+      <wx-parse :content="detail.answer_content || ''"></wx-parse>
     </view>
   </div>
 </template>
@@ -30,6 +30,7 @@ import { mapState, mapActions } from 'vuex'
 import wxParse from 'mpvue-wxparse'
 export default {
   onLoad(params) {
+    this.clearReadContent({type: 'question'})
     const { id } = params
     this.getReadContent({ type: 'question', id })
   },
@@ -43,7 +44,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions('read', ['getReadContent'])
+    ...mapActions('read', ['getReadContent', 'clearReadContent'])
   }
 }
 </script>
