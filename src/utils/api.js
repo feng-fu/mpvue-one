@@ -1,6 +1,7 @@
 import request from './request'
 
 const baseURL = `https://petrify.cc`
+// const baseURL = 'http://localhost:7001'
 
 const api = {
   // picture
@@ -15,7 +16,8 @@ const api = {
   // getMusicDetail: (id) => request.get(`/v1/one?${encodeURI('url=/api/music/detail/' + id + '?version=3.5.0&platform=android')}`, null, { baseURL }),
   // movie
   getMovieList: () => request.get(`/v1/one?${encodeURI('url=/api/movie/list/0?version=3.5.0&platform=android')}`, null, { baseURL }),
-  getMovieDetail: (id) => request.get(`/v1/one?${encodeURI('url=/api/movie/' + id + '/story/1/0?version=3.5.0&platform=android')}`, null, { baseURL })
+  getMovieDetail: (id) => request.get(`/v1/one?${encodeURI('url=/api/movie/' + id + '/story/1/0?version=3.5.0&platform=android')}`, null, { baseURL }),
+  getWeather: (location) => request.get(`/v1/weather?location=${location}`, null, { baseURL })
 }
 
 export default api
