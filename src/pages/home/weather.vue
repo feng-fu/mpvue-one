@@ -2,7 +2,7 @@
   <div class="weather">
     <div class="date">{{day}}</div>
     <div class="location">
-      {{weather.basic.parent_city}}
+      {{weather.basic.location}}
     </div>
     <img :src="'https://petrify.oss-cn-beijing.aliyuncs.com/weather/' + weather.now.cond_code + '.png'" alt="">
     <div class="cond-text">{{weather.now.cond_txt}}</div>

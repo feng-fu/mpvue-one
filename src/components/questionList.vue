@@ -1,7 +1,6 @@
 <template>
   <view class="read-item">
     <view class="dot"></view>
-    <view class="date">{{content.question_makettime}}</view>
     <view class="content">
       <view class="title">
         <text>{{content.question_title}}</text>
@@ -13,6 +12,7 @@
         <text>— {{content.author_list[0].user_name}}</text>
       </view>
     </view>
+    <view class="date">{{content.question_makettime}}</view>
   </view>
 </template>
 
@@ -67,11 +67,10 @@ export default {
     height: 246rpx;
     box-sizing: border-box;
     border-radius: 10rpx;
-    /* background-color: #42adda; */
     background: linear-gradient(to bottom right, #9653fe, #507fff);
     color: #fff;
     position: relative;
-    margin-right: 20rpx;
+    margin-left: 20rpx;
     padding: 2rpx 12rpx 0;
   }
   .content::before {
@@ -81,18 +80,18 @@ export default {
     height: 0;
     border-width: 15rpx 12rpx;
     border-style: solid;
-    border-color: transparent #9653fe transparent transparent;
+    border-color: transparent transparent transparent #6c6dfe;
     position: absolute;
     top: 20rpx;
-    left: -20rpx;
+    right: -20rpx;
   }
   .dot {
     width: 18rpx;
     height: 18rpx;
-    background-color: rgba(150, 83, 254, .6);
+    background-color: rgba(108, 109, 254, .6);
     position: absolute;
     top: 26rpx;
-    left: 150rpx;
+    right: 150rpx;
     border-radius: 50%;
   }
 </style>
