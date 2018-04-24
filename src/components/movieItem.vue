@@ -6,7 +6,7 @@
           <text>{{movie.title}}</text>
         </view>
         <view class="author">
-          <text>{{movie.author_list[0].user_name}}</text>
+          <text>{{movie.author_list[0].user_name}} —— </text>
           <text>{{movie.author_list[0].desc}}</text>
         </view>
       </view>
