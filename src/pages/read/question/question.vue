@@ -51,17 +51,16 @@ export default {
 
 <style scoped>
   .title {
-    line-height: 48rpx;
-    font-size: 38rpx;
+    font-size: 18px;
     overflow: hidden;
-    padding: 10 0 30rpx;
     text-align: center;
+    padding: .8em;
+    font-weight: bold;
   }
   .asker, .answerer {
     font-size: 30rpx;
     padding-left: 1em;
     height: 60rpx;
-    line-height: 60rpx;
   }
   .divider {
     width: 90%;
