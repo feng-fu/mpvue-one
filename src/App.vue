@@ -69,4 +69,7 @@ export default {
   padding: 0 10rpx;
   text-indent: 0;
 }
+.wxParse .p {
+  text-indent: 1em;
+}
 </style>

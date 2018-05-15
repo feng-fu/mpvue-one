@@ -4,6 +4,7 @@
       :title="currentMovie.title"
       :user_name="currentMovie.user ? currentMovie.user.user_name : ''"
       :content="currentMovie.content || ''"
+      :summary="currentMovie.summary || ''"
     ></v-article>
   </block>
 </template>
