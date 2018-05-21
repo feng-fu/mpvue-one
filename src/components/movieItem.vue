@@ -1,17 +1,18 @@
 <template>
   <block>
-    <view class="list-container" v-if="movie.author_list && movie.author_list.length">
+    <view class="list-container" v-if="movie.subtitle">
       <view class="content">
         <view class="view-title title">
           <text>{{movie.title}}</text>
         </view>
         <view class="author">
-          <text>{{movie.author_list[0].user_name}} —— </text>
-          <text>{{movie.author_list[0].desc}}</text>
+          <!-- <text>{{movie.author_list[0].user_name}} —— </text> -->
+          <!-- <text>{{movie.author_list[0].desc}}</text> -->
+          <text>{{movie.subtitle}}</text>
         </view>
       </view>
       <view>
-        <image class="avatar" :src="movie.author_list[0].web_url" />
+        <image class="avatar" :src="movie.img_url || 'https://petrify.oss-cn-beijing.aliyuncs.com/arrow-right.png'" />
       </view>
     </view>
     <block v-else>
@@ -34,7 +35,12 @@ export default {
 <style>
   .title {
     font-size: 28rpx;
+    line-height: 40rpx;
+    margin-bottom: 10rpx;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .only-title {
     height: 100%;

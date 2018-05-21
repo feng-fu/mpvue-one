@@ -2,8 +2,8 @@
   <div class="container">
     <navigator
       v-for="v in movies"
-      :key="v.id"
-      :url="'/pages/movie/detail/main?id=' + v.id"
+      :key="v.item_id"
+      :url="'/pages/movie/detail/main?id=' + v.item_id"
        class="item"
     >
       <movie-detail :movie="v"></movie-detail>
