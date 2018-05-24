@@ -43,13 +43,13 @@ export default {
           text: 'MOVIE',
           iconPath: 'static/icon/movie.png',
           selectedIconPath: 'static/icon/movie-active.png'
+        },
+        {
+          pagePath: 'pages/daily/main',
+          text: 'DAILY',
+          iconPath: 'static/icon/daily.png',
+          selectedIconPath: 'static/icon/daily-active.png'
         }
-        // {
-        //   pagePath: 'pages/music/main',
-        //   text: 'MUSIC',
-        //   iconPath: 'static/icon/music.png',
-        //   selectedIconPath: 'static/icon/music-active.png'
-        // }
       ]
     }
   }

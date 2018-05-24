@@ -16,9 +16,9 @@ request.interceptors.request.use((request) => {
 
 request.interceptors.response.use((response, promise) => {
   wx.hideNavigationBarLoading()
-  if (!(response && response.data && response.data.res === 0)) {
-    errorPrompt(response)
-  }
+  // if (!(response && response.data && response.data.res === 0)) {
+  //   errorPrompt(response)
+  // }
   return promise.resolve(response.data)
 }, (err, promise) => {
   wx.hideNavigationBarLoading()
